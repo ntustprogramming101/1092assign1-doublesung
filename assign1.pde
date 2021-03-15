@@ -39,7 +39,7 @@ void setup() {
   soldierWidth = 80;
   soldierSpeed = 5;
   
-  robotX = (OFFSET_X*2 + floor(random(4)) * OFFSET_X);
+  robotX = (OFFSET_X*2 + floor(random(6)) * OFFSET_X);
   robotY = (OFFSET_Y*2 + floor(random(4)) * OFFSET_Y);
   
   laserHeadX = robotX + ROBOT_OFFSET_X - LASER_MIN_W;
@@ -90,12 +90,12 @@ void draw() {
   laserHeadX += laserSpeed;
   
   //laser width equal 40px starting move
-  if(laserWidth == LASER_MAX_W){
+  if(laserWidth >= LASER_MAX_W){
     laserTailX += laserSpeed;
   }
   
   //when laser move 160px back to origin
-  if(laserHeadX < robotX - LASER_MOVE_W){
+  if(laserHeadX <= robotX - LASER_MOVE_W){
     laserHeadX = robotX + ROBOT_OFFSET_X - LASER_MIN_W; 
     laserTailX = robotX + ROBOT_OFFSET_X;
   }
