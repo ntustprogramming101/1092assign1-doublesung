@@ -34,7 +34,7 @@ void setup() {
   robot = loadImage("img/robot.png");
   soldier = loadImage("img/soldier.png");
   
-  soldierX = -OFFSET_X;
+  soldierX = 0;
   soldierY = (OFFSET_Y*2 + floor(random(4)) * OFFSET_Y);
   soldierWidth = 80;
   soldierSpeed = 5;
@@ -49,20 +49,20 @@ void setup() {
 }
 
 void draw() {
-  image(bg, 0, 0, 640, 480);
+  background(bg);
   
-  image(soil, 0, 160, 640, 320);
+  image(soil, 0, OFFSET_Y*2, width, 320);
   
   //grass
   noStroke();
   fill(124, 204, 25);
-  rect(0, 145, 640, 15);
+  rect(0, OFFSET_Y*2 - 15, width, 15);
   
   //sun 
   stroke(255, 255, 0);
   strokeWeight(5);
   fill(253, 184, 19);
-  ellipse(590, 50, 120, 120);
+  ellipse(width - 50, 50, 120, 120);
   
   image(groundHog, 280, 80, 80, 80);
   
