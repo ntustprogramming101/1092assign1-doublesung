@@ -5,7 +5,7 @@ final float ROBOT_OFFSET_X = 25;
 final float ROBOT_OFFSET_Y = 37;
 
 final float LASER_OFFSET_Y = 80;
-final float LASER_MAX_W = 40;
+final float LASER_MAX_W = 30;
 final float LASER_MIN_W = 4;
 final float LASER_MOVE_W = 160;
 
